@@ -378,3 +378,18 @@ Rule 4: Drop Non-dominant terms
 ## O(n!) -> Evil 
 
 > [Example](https://stackoverflow.com/questions/3953244/example-of-on)
+
+
+# 3 Pillars Of Programing
+
+- What is good code?
+  - Readable
+  - Scalable
+    - Time And Speed
+    - Memory
+ 
+ - Which code is best?
+   - Readable
+   - Speed [Time Complexity]
+   - Memory [Space Complexity]
+ 
