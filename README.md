@@ -138,6 +138,8 @@ function anotherFunChallenge(input) {
 ```
 ##### Drop The Constant
 
+> Remove Constant
+
 ```javaScript
 
 function printFirstItemThenFirstHalfThenSayHi100Times(items) {
@@ -196,5 +198,81 @@ function compressBoxesTwice(boxes, boxes2){
 
 // O(2n) > O(n) > Wrong!
 // O(a + b) || O(n + m) > Right
+
+function compressBoxesTwice(boxes, boxes2){
+  boxes.forEach((box) => {
+    console.log(box);
+    boxes2.forEach((box) => {
+        console.log(box);
+    })
+  })
+}
+
+// O(a*b) > Nested Loop > Trick For Knowing this Notation is when Loop are inside Loop that where '*' works
+// O(a + b) > pararell Loop >  Trick For Knowing this Notation is when Loop are Pararell aka Indented At same Level '+' works
+
+```
+
+
+## O(n^2) -> Quadratic Time 
+
+> Different Terms of Input
+
+![imgBigOn^2](https://4.bp.blogspot.com/-hLg6KKtR6UQ/WQIx98yZswI/AAAAAAAA2dI/9W7WYkKB8Gca7y_aZArPakvRfvYFJ7ApQCLcB/s1600/yaacovapelbaumbigoplot.jpg)
+
+```javaScript
+
+// Log all pairs of array
+
+const boxes = [...Array(5).keys()];
+
+for(let i = 0; i < boxes.length; i++ ){
+  for(let j = 0; j < boxes.length; j++){
+    console.log([boxes[i], boxes[j]])
+  }
+}
+
+// Output
+
+[ 0, 0 ]
+[ 0, 1 ]
+[ 0, 2 ]
+[ 0, 3 ]
+[ 0, 4 ]
+[ 1, 0 ]
+[ 1, 1 ]
+[ 1, 2 ]
+[ 1, 3 ]
+[ 1, 4 ]
+[ 2, 0 ]
+[ 2, 1 ]
+[ 2, 2 ]
+[ 2, 3 ]
+[ 2, 4 ]
+[ 3, 0 ]
+[ 3, 1 ]
+[ 3, 2 ]
+[ 3, 3 ]
+[ 3, 4 ]
+[ 4, 0 ]
+[ 4, 1 ]
+[ 4, 2 ]
+[ 4, 3 ]
+[ 4, 4 ]
+
+
+// O(n * n) > O(n^2) > Quadratic Time 
+
+// ES5 
+
+function logAllPairsOfBoxes(boxes) {
+  boxes.forEach(function(firstBox) {
+    boxes.forEach(function(seconBox) {
+      console.log([firstBox, seconBox])
+    })
+  })
+}
+
+// O(n * n) > O(n^2) > Quadratic Time 
 
 ```
