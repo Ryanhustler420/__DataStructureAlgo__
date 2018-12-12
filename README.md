@@ -136,3 +136,47 @@ function anotherFunChallenge(input) {
 // BIG O(4 + 7n) <- which is as good as BIG O(n).
 
 ```
+##### Drop The Constant
+
+```javaScript
+
+function printFirstItemThenFirstHalfThenSayHi100Times(items) {
+    console.log(items[0]); // O(1)
+
+    var middleIndex = Math.floor(items.length / 2); // O(1)
+    var index = 0; // O(1)
+
+    while (index < middleIndex) { // O(n/2)
+        console.log(items[index]); // O(n/2)
+        index++; // O(n/2)
+    }
+
+    for (var i = 0; i < 100; i++) { // O(100)
+        console.log('hi'); // O(100)
+    }
+}
+
+// O(n/2) + O(n/2) + O(n/2) = 3(n/2)
+// O(1) + O(1) + O(1) + O(100) = O(103)
+// O(n/2 + 103) > drop the constant
+// O(n)
+
+// Or
+// O(n + 5000000) > will be O(n) > just drop the constant 
+
+function compressBoxesTwice(boxes) {
+  // itrating two times same step
+  boxes.forEach((box) => {
+    console.log(box); // O(n)
+  }}
+  
+  boxes.forEach((box) => {
+    console.log(box); O(n)
+  }}
+}
+
+// O(n) + O(n) = O(2n)
+// Drop the Constants
+// O(n)
+
+```
