@@ -340,7 +340,7 @@ function O(numbers) {
     - [x] **O(n)** Linear- for loops, while loops through n items
     - [x] **O(n^2)** Quadratic- every element in a collection needs to be compared to ever other element. Two nested loops
     - [ ] **O(2^n)** Exponential- recursive algorithms that solves a problem of size N 
-    - [ ] **O(n!)** Factorial- you are adding a loop for every element
+    - [X] **O(n!)** Factorial- you are adding a loop for every element
     - [ ] **O(log N)** Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search) 
     - [ ] **O(n log(n))** Log Liniear- usually sorting operations
   
@@ -372,3 +372,9 @@ Rule 4: Drop Non-dominant terms
 - Structures 
 - Function Call 
 - Allocations
+
+> [Big O Chart](http://bigocheatsheet.com/)
+
+## O(n!) -> Evil 
+
+> [Example](https://stackoverflow.com/questions/3953244/example-of-on)
