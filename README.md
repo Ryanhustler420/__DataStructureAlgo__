@@ -33,3 +33,5 @@ findNemo(large)
 ```
 
 > As input grows the output time will be different! depends on how powerfull CPU you have or different factor
+
+**Big O is the language which tell us which Algorithem is Good and which one are bad! by campairing through functions and how many number of operation perform by that function! which is as good as how many operation a function has to perform. that will tell us the Big O**
