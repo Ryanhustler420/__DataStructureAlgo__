@@ -81,3 +81,29 @@ function consoleLogBoxex(boxes) {
 ![imgBigO1](https://justin.abrah.ms/static/images/o_1__plot.png)
 
 > no metter how much the size of array this function will always grabbing the first item! so This is Constant performance
+
+##### Excercise Big O
+
+```javaScript
+
+// What is the Big O of the below function? (Hint, you may want to go line by line)
+function funChallenge(input) {
+  let a = 10; // O(1)
+  a = 50 + 3; // O(1)
+
+  for (let i = 0; i < input.length; i++) { // O(n)
+    anotherFunction(); // O(n)
+    let stranger = true; // O(n)
+    a++; // O(n)
+  }
+  return a; // O(1)
+}
+// O(1) times 3 = O(3) = 3.
+// O(n) times 4 = n + n + n + n = 4n.
+// 3 + 4n
+// ......
+// BIG O(3 + 4n)
+// but, at the end of the day this is just
+// BIG O(n)
+
+```
