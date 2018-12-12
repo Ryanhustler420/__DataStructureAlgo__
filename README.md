@@ -276,3 +276,58 @@ function logAllPairsOfBoxes(boxes) {
 // O(n * n) > O(n^2) > Quadratic Time 
 
 ```
+
+```javaScript
+
+function printAllNumbersThenAllPairSums(numbers) {
+
+  console.log('these are the numbers:');
+  numbers.forEach(function(number) {
+    console.log(number);
+  });
+
+  console.log('and these are their sums:');
+  numbers.forEach(function(firstNumber) {
+    numbers.forEach(function(secondNumber) {
+      console.log(firstNumber + secondNumber);
+    });
+  });
+}
+
+printAllNumbersThenAllPairSums([1,2,3,4,5])
+
+// O(n) + O(n^2)
+// O(2n^2)
+// O(n^2) Just keep the dominant term and drop non dominant term
+// care about the most important term
+// so we drop 'n'
+// because the power of 'n^2' is way more than 'n'. so it wont hurt if we drop that non dominant term. as simple as that
+
+// for example (drop non dominant term)
+
+// O(x^2+3x+100+x/2)
+// again we worry about the most dominant term 
+// because x^2 is the most significant
+
+// Simplify
+// let x = 500;
+// O((5^2)+(3*5)+100+(5/2))
+// O(250000 + 1500 + 100 + 250)
+// O(250000) > all 100, which is non dominant
+// O(x^2) > drop all the non dominant term!
+
+// it would be least important if you take x = 5 ! but, for large input it will shine
+
+function O(numbers) {
+  numbers.forEach(function(firstNumber) {
+    numbers.forEach(function(secondNumber) {
+      numbers.forEach(function(thirdNumber) {
+        console.log(firstNumber + secondNumber + thirdNumber);
+      });
+    });
+  });
+}
+
+// O(n^3) > because 3 nested loop > BAD IDEA
+
+```
