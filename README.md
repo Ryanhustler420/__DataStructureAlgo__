@@ -401,3 +401,27 @@ Rule 4: Drop Non-dominant terms
 - Stack = where we keep track the functions call
 
 - sometime we want to optimize for using less memory instead of using less time. Talking about memory or space complexity is very similar to talking about the time cost. we simply look at the total size relative to the size of the input and see how many new variable or new memory ware allocating how much memory is being used.
+
+## Example 
+
+```javaScript
+
+// Space complexity O(1)
+function boooo(n) {
+    for (let i = 0; i < n; i++) {
+        console.log('booooo');
+    }
+}
+
+// Space complexity O(n)
+function arrayOfHiNTimes(n) {
+    var hiArray = [];
+    for (let i = 0; i < n; i++) {
+        hiArray[i] = 'hi';
+    }
+    return hiArray;
+}
+
+arrayOfHiNTimes(6)
+
+```
