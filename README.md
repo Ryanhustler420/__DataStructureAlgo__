@@ -37,7 +37,7 @@ findNemo(large)
 **Big O is the language which tell us which Algorithem is Good and which one are bad! by campairing through functions and how many number of operation perform by that function! which is as good as how many operation a function has to perform. that will tell us the Big O**
 
 
-## O(n)
+## O(n) -> Linear Time
 
 ```javaScript
 
@@ -54,3 +54,30 @@ findNemo(large)
   findNemo(large)
 
 ```
+
+![imgBigOn](http://cooervo.github.io/Algorithms-DataStructures-BigONotation/images/graphs/linear.svg)
+
+
+## O(1) -> Constant Time
+
+```javaScript
+
+function compressFirstBox(boxes) {
+  console.log(boxes[0];
+}
+
+// Or 
+
+function consoleLogBoxex(boxes) {
+  console.log(boxes[0]); // O(1)
+  console.log(boxes[1]); // O(1)
+}
+
+// O(2) = total time taken = where we remove constant terms! in this function that is the number '2'. so which is as good as O(1)
+// meaning constant time -> O(1)
+
+```
+
+![imgBigO1](https://justin.abrah.ms/static/images/o_1__plot.png)
+
+> no metter how much the size of array this function will always grabbing the first item! so This is Constant performance
