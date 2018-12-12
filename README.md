@@ -393,3 +393,11 @@ Rule 4: Drop Non-dominant terms
    - Speed [Time Complexity]
    - Memory [Space Complexity]
  
+
+# Space Complexity
+
+> When a program execute it has two ways to remember things. The Heap and The Stack
+- Heap = where we store variable that we assign
+- Stack = where we keep track the functions call
+
+- sometime we want to optimize for using less memory instead of using less time. Talking about memory or space complexity is very similar to talking about the time cost. we simply look at the total size relative to the size of the input and see how many new variable or new memory ware allocating how much memory is being used.
