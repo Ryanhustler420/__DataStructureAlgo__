@@ -491,3 +491,30 @@ arrayOfHiNTimes(6)
 - [ ] Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
 
 **And always remember:** Communicate your thought process as much as possible. Don’t worry about finishing it fast. Every part of the interview matters.
+
+## Arrays
+
+```javaScript
+
+const strings= ['a', 'b', 'c', 'd'];
+const numbers = [1,2,3,4,5];
+// Variable array is somewhere in memory and the computer knows it.
+// When I do array[2], i'm telling the computer, hey go to the array and grab the 3rd item from where the array is stored.
+
+
+//push
+strings.push('e');
+
+//pop
+strings.pop();
+strings.pop();
+
+//unshift
+strings.unshift('x')
+
+//splice
+strings.splice(2, 0, 'alien');
+
+console.log(strings)
+
+```
