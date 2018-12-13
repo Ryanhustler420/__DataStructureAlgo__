@@ -569,3 +569,38 @@ myArray.shiftItems(0);
 console.log(myArray);
 
 ```
+
+## Reverse String 
+
+```javaScript
+
+function reverse(str){
+
+  if(!str && str.length < 2 && typeof(str) !== 'string')
+  {
+    return 'Single AF'
+  }  
+  const length = str.length - 1;
+  const reverseSentence = []; 
+  
+  for(let index = length; index >= 0; index--){
+    reverseSentence.push(str[index]);
+  }
+
+  return reverseSentence.join('').trim();
+}
+
+const reverse2 = str => {
+  return str.split('').reverse().join('');
+}
+
+const reverse3 = str => str.split('').reverse().join('');
+
+const reverse4 = str => [...str].reverse().join('');
+
+reverse('My name is gaurav gupta');
+reverse2('My name is gaurav gupta');
+reverse3('My name is gaurav gupta');
+reverse4('My name is gaurav gupta');
+
+```
