@@ -604,3 +604,35 @@ reverse3('My name is gaurav gupta');
 reverse4('My name is gaurav gupta');
 
 ```
+
+## Hash Tables
+
+> [MD5](http://www.miraclesalad.com/webtools/md5.php) - MDS Algo for hashing data one direction
+
+> [Hash Tables](https://en.wikipedia.org/wiki/Hash_table) - Wikipidia
+
+> [Hash Tables Animation](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html) - You Can See Data Operation in Hash Tables Real Time
+
+> [Compairson of Programming languages](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(associative_array))
+
+
+##### Hash Tables As Object in JS
+
+```javaScript
+ let user = {
+  age: 54,
+  name: 'Kylie',
+  magic: true,
+  scream: function() {
+    console.log('ahhhhhh!');
+  }
+};
+
+user.age;
+user.spell = 'abra kadabra';
+user.scream()
+
+//Map --> Gives you some order
+//Set --> No duplicate keys
+```
+
