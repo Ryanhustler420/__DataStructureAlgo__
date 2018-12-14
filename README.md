@@ -636,3 +636,56 @@ user.scream()
 //Set --> No duplicate keys
 ```
 
+## Hash Tables Code Example
+
+```javaScript
+
+class HashTable {
+  constructor(size){
+    this.data = new Array(size);
+  }
+
+  set(string, number) {
+    const index = this._hash(string);
+    
+    // handling collision if occurs
+    if(!this.data[index]) {
+      this.data[index] = [];
+    }
+    
+    this.data[index].push([string, number]);
+    return this.data;
+  }
+
+  get(string) {
+    const index = this._hash(string);
+    const data = this.data[index];
+
+    if(data) {
+      for(let i = 0; i < data.length; i++) {
+        if(data[i][0] === string){
+            return data[i][1];
+        }
+      }
+    }
+    return undefined;
+  }
+  
+  // this is hash function which generate index on the basis of String length and String itself
+  _hash(key) { // the _ meaning this function should only be use as private function and not directly with instence! you should not! but technically you can!
+    let hash = 0;
+    for (let i =0; i < key.length; i++){
+        hash = (hash + key.charCodeAt(i) * i) % this.data.length
+    }
+    return hash;
+  }
+  
+}
+
+const myHashTable = new HashTable(50);
+myHashTable.set('grapes', 10000)
+myHashTable.set('apples', 10001)
+
+myHashTable.get('apples');
+
+```
