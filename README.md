@@ -643,6 +643,7 @@ user.scream()
 class HashTable {
   constructor(size){
     this.data = new Array(size);
+    this.keysStorage = [];
   }
 
   set(string, number) {
@@ -654,6 +655,7 @@ class HashTable {
     }
     
     this.data[index].push([string, number]);
+    this.keysStorage.push(index);
     return this.data;
   }
 
@@ -680,6 +682,16 @@ class HashTable {
     return hash;
   }
   
+   keys() {
+    const keysArray = [];
+    for (let i=0; i < this.keysStorage.length; i++){
+        const keys = this.keysStorage[i];
+        const val = this.data[keys][0][0];
+        keysArray.push(val);
+    }
+    return keysArray;
+  }
+  
 }
 
 const myHashTable = new HashTable(50);
@@ -687,5 +699,6 @@ myHashTable.set('grapes', 10000)
 myHashTable.set('apples', 10001)
 
 myHashTable.get('apples');
+myHashTable.keys();
 
 ```
