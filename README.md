@@ -763,3 +763,237 @@ firstRecurringCharacter([1,2,3,4])
 // return 5 because the pairs are before 2,2
 
 ```
+
+## Linked List JS
+
+```javaScript
+
+// Create the below linked list:
+// myLinkedList = {
+//   head: {
+//     value: 10
+//     next: {
+//       value: 5
+//       next: {
+//         value: 16
+//         next: null
+//       }
+//     }
+//   }
+// };
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+  
+    // const newNode = {
+    //   value,
+    //   next: null
+    // }
+
+    const newNode = new Node(value);
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return newNode;
+  }
+
+
+  prepend(value) {
+  
+    // const newNode = {
+    //   value,
+    //   next : null
+    // }
+
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+  }
+
+  insert(index, value) {
+
+    if (index == 1) {
+      return this.prepend(value);
+    }
+
+    if (index >= this.length) {
+      return this.append(value);
+    }
+
+    let counter = 1;
+    let HeadItr = this.head;
+    while (HeadItr !== null) {
+
+      if (counter === index - 1) {
+        const tempNode = HeadItr.next; // 10
+        const newNode = new Node(value); // newNode Created
+        HeadItr.next = newNode;
+        newNode.next = tempNode;
+        break;
+      }
+
+      counter++;
+      this.length++;
+      HeadItr = HeadItr.next;
+    }
+  }
+
+  remove(index) {
+    if (index >= this.length + 1 || index === 0)
+          return;
+    let currentNode = this.head;
+    let counter = 1;
+
+    if(index === 1 && currentNode) {
+      this.head = currentNode.next;
+      this.length--;
+      return;
+    }
+    while (currentNode !== null) {
+      if (counter === index - 1) {
+        currentNode.next = currentNode.next.next;
+        break;
+      }
+      counter++;
+      currentNode = currentNode.next;
+    }
+    this.length--;
+  }
+
+  print() {
+    const arrList = [];
+    let HeadItr = this.head;
+    while (HeadItr !== null) {
+      arrList.push(HeadItr.value);
+      HeadItr = HeadItr.next;
+    }
+    return arrList;
+  }
+}
+
+let myLinkedList = new LinkedList(10);
+
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.append(26);
+myLinkedList.prepend(-1);
+myLinkedList.prepend(-2);
+myLinkedList.prepend(-3);
+myLinkedList.insert(1, 999);
+myLinkedList.insert(1, 999);
+myLinkedList.append(36);
+myLinkedList.append(46);
+
+myLinkedList.print();
+
+
+
+
+```
+
+> Few Tweek But as same as above code solution
+
+```javaScript
+
+// add a method remove() to the linked list that deletes a node to the specified index.
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+    const newNode = {
+      value: value,
+      next: null
+    }
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null
+    }
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+        array.push(currentNode.value)
+        currentNode = currentNode.next
+    }
+    return array;
+  }
+  insert(index, value){
+    //Check for proper parameters;
+    if(index >= this.length) {
+      console.log('yes')
+      return this.append(value);
+    }
+    
+    const newNode = {
+      value: value,
+      next: null
+    }
+    const leader = this.traverseToIndex(index-1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+    return this.printList();
+  }
+  traverseToIndex(index) {
+    //Check parameters
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== index){
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+  remove(index) {
+    // Check Parameters      
+    const leader = this.traverseToIndex(index-1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
+  }
+}
+
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);myLinkedList.prepend(1);
+myLinkedList.insert(2, 99);
+myLinkedList.insert(20, 88);
+myLinkedList.remove(2);
+
+```
