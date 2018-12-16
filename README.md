@@ -1329,3 +1329,78 @@ myStack.peek();
 
 
 ```
+
+##### Queues Using JS
+
+```javaScript
+
+class Node {
+	constructor(value) {
+		this.value = value;
+		this.next = null;
+	}
+}
+
+class Queue {
+
+	constructor() {
+		this.first = null;
+		this.last = null;
+		this.length = 0;
+	}
+
+	peek() {
+		return this.isEmpty() ? 'Queue Empty' : this.first;
+	}
+
+	enqueue(value) {
+		const newNode = new Node(value);
+		if (this.isEmpty()) {
+			this.first = newNode;
+			this.last = newNode;
+		} else {
+			this.last.next = newNode;
+			this.last = newNode;
+		}
+		this.length++;
+		return this;
+	}
+	// 1 2 3 4 5 6 7 8 9 10
+	dequeue() {
+		if (this.length === 0) {
+			this.first = null;
+			this.last = null;
+		} else {
+			const node = this.first;		
+			const next = this.first.next;
+			this.first = next;
+			this.length--;
+		}
+	}
+
+	isEmpty() {
+		return this.length === 0;
+	}
+}
+
+const myQueue = new Queue();
+myQueue.enqueue(100);
+myQueue.enqueue(900);
+myQueue.enqueue(600);
+myQueue.enqueue(200);
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.peek()
+// myQueue.enqueue(200);
+
+
+//Joy
+//Matt
+//Pavel
+//Samir
+
+```
