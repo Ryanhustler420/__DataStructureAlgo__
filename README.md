@@ -1140,3 +1140,145 @@ myDoublyLinkedList.print();
 
 
 ```
+
+## Stacks & Queues JS
+
+```javaScript
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor() {
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+
+  peek() {
+    return this.isEmpty() ? 'Stack Empty' : this.top.value;
+  }
+
+  push(value) {
+    // 3 <-- 2 <-- 1 <-- null
+    const newNode = new Node(value);
+    newNode.next = this.top;
+    this.top = newNode;
+    if(this.isEmpty()) {
+    	this.bottom = newNode;
+    }
+    this.length++;
+	return this;
+  }
+
+  pop() {
+    if(this.isEmpty())
+    	return 'Stack Empty'; 
+    // 3 <-- 2 <-- 1 <-- null
+    const oldTop = this.top;
+    this.top = this.top.next;
+	this.length--;
+    return oldTop;
+  }
+
+  isEmpty() {
+	return this.length === 0;
+  }
+
+  bottomStack() {
+    if(!this.isEmpty())
+        return this.bottom.value;
+  }
+
+}
+
+const myStack = new Stack();
+
+myStack.push("Google");
+myStack.push("Udemy");
+myStack.push("Discord");
+myStack.push("facebook");
+myStack.push("goonsroom");
+myStack.pop();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+myStack.peek();
+
+
+//Discord
+//Udemy
+//google
+
+
+```
+
+> Little bit Tweek || Or Different Way
+
+```javaScript
+
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor(){
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+  peek() {
+    return this.top;
+  }
+  push(value){
+    const newNode = new Node(value);
+    if (this.length === 0) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      const holdingPointer = this.top;
+      this.top = newNode;
+      this.top.next = holdingPointer;
+    }
+    this.length++;
+    return this;
+  }
+  pop(){
+    if (!this.top) {
+      return null;
+    }
+    if (this.top === this.bottom) {
+      this.bottom = null;
+    }
+    const holdingPointer = this.top;
+    this.top = this.top.next;
+    this.length--;
+    return this;
+  }
+  //isEmpty
+}
+
+const myStack = new Stack();
+myStack.peek();
+myStack.push('google');
+myStack.push('udemy');
+myStack.push('discord');
+myStack.peek();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+
+
+//Discord
+//Udemy
+//google
+
+
+```
