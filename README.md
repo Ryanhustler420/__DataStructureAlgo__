@@ -1282,3 +1282,50 @@ myStack.pop();
 
 
 ```
+
+##### Stacks Using Array JS
+
+```javaScript
+
+class Stack {
+  constructor(){
+	  this.stackArray = [];
+  }
+
+  peek() {
+	const currentIndex = this.getSize() - 1;
+    return this.stackArray[currentIndex];
+  }
+
+  getSize() {
+	  return this.stackArray.length;
+  }
+
+  push(value){
+	if(value)
+		this.stackArray.push(value)
+  }
+  pop(){
+	if(this.isEmpty())
+		return
+
+	const index = this.getSize() - 1;
+	const currentValue = this.stackArray[index];
+	this.stackArray.pop();
+	return currentValue;
+  }
+
+  isEmpty() {
+	  return this.stackArray.length === 0
+  }
+  
+}
+
+const myStack = new Stack();
+myStack.push('google');
+myStack.push('udemy');
+myStack.push('discord');
+myStack.peek();
+
+
+```
